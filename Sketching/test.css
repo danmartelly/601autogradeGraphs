@@ -1,0 +1,13 @@
+body{text-align: center;background: #f2f6f8;}
+
+#axes{
+	position:absolute;z-index:1;
+}
+
+#canvas1{
+    position:relative;
+    z-index:20;
+    border:medium; 
+    border-color: #00F; 
+    border-style: solid;
+}

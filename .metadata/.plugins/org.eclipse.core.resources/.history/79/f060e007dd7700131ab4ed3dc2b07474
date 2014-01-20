@@ -1,0 +1,221 @@
+/*
+* @author : Daniel Martelly
+* Heavily dependent on code from Ram Kulkarni
+*/
+
+PointRecordDrawing = function (canvasId) {
+	var self = this;
+	this.canvas = null;
+	this.width = this.height = 0;
+	this.actions = new Array();
+	this.ctx = null;
+	this.mouseDown = false;
+	this.currentRecording = null;
+	this.recordings = new Array();
+	this.lastMouseX = this.lastMouseY = -1;
+	this.bgColor = "rgb(255, 255, 255)";
+	var currentLineWidth = 5;
+	var drawingColor = "rgb(0,0,0)";
+	var pauseInfo = null;
+	
+	onMouseDown = function(event) {
+		var canvasX = $(self.canvas).offset().left;
+		var canvasY = $(self.canvas).offset().top;
+		
+		self.mouseDown = true;
+		var x = Math.floor(event.pageX - canvasX);
+		var y = Math.floor(event.pageY - canvasY);
+		
+		var currAction = new Point(x, y, 0);
+		self.drawAction(currAction, true);
+		if (self.currentRecording != null) {
+			self.currentRecording.addAction(currAction);
+		}
+		event.preventDefault();
+		return false;
+	}
+	
+	onMouseMove = function(event) {
+		if (self.mouseDown) {
+			var canvasX = $(self.canvas).offset().left;
+			var canvasY = $(self.canvas).offset().top;
+			
+			var x = Math.floor(event.pageX - canvasX);
+			var y = Math.floor(event.pageY - canvasY);
+			
+			var action = new Point(x,y,1);
+			self.drawAction(action, true);
+			if (self.currentRecording != null) {
+				self.currentRecording.addAction(action);
+			}
+			
+			event.preventDefault();
+			self.lastMouseX = x;
+			self.lastMouseY = y;
+			return false;
+		}
+	}
+	
+	onMouseUp = function(event) {
+		self.mouseDown = false;
+		self.lastMouseX = -1;
+		self.lastMouseY = -1;
+	}
+	
+	this.startRecording = function() {
+		self.currentRecording = new Recording(this);
+		self.recordings = new Array();
+		self.recording.push(self.currentRecording);
+		self.currentRecording.start();
+	}
+	
+	this.stopRecording = function() {
+		if (self.currentRecording != null) {
+			self.currentRecording.stop();
+		}
+		self.currentRecording = null;
+	}
+	
+	this.clearCanvas = function() {
+		self.ctx.fillSytle = self.bgColor;
+		self.ctx.fillRect(0,0,self.canvas.width, self.canvas.height);
+	}
+	
+	this.removeAllRecordings = function() {
+		self.recordings = new Array();
+		self.currentRecording = null;
+	}
+	
+	this.drawAction = function (actionArg, addToArray) {
+		var x = actionArg.x;
+		var y = actionArg.y;
+		
+		switch (actionArg.type) {
+		case 0: //moveto
+			self.ctx.beginPath();
+			self.ctx.moveTo(x,y);
+			self.ctx.strokeStyle = self.drawingColor;
+			self.ctx.lineWidth = self.currentLineWidth;
+			break;
+		case 1: //lineto
+			self.ctx.lineTo(x,y);
+			self.ctx.stroke();
+			break;
+		}
+		if (addToArray) {
+			self.actions.push(actionArg);
+		}
+	}
+	
+	__init = function() {
+		self.canvas = $("#" + canvasId);
+		if (self.canvas.length == 0) {
+			alert("No canvas with id " + canvasId + " found");
+			return;
+		}
+		self.canvas = self.canvas.get(0);
+		self.width = $(self.canvas).width();
+		self.height = $(self.canvas).height();
+		self.ctx = self.canvas.getContext("2d");
+		
+		$(self.canvas).bind("vmousedown", onMouseDown);
+		$(self.canvas).bind("vmouseup", onMouseUp);
+		$(self.canvas).bind("vmousemove", onMouseMove);
+		
+		self.clearCanvas();
+	}
+	
+	__init();
+};
+
+Recording = function(drawingArg) {
+	var self = this;
+	this.drawing = drawingArg;
+	this.timeSlots = new Object();//Map with key as time slot and value as array of Point objects
+	
+	this.buffer = new Array(); // array of Point objects
+	this.timeInterval = 100;
+	this.currTime = 0;
+	this.started = false;
+	this.intervalId = null;
+	this.currTimeSlot = 0;
+	this.actionsSet = null;
+	this.currActionSet = null;
+	this.recStartTime = null;
+	this.pauseInfo = null;
+	
+	this.start = function() {
+		self.currTime = 0;
+		self.currTimeSlot = -1;
+		self.actionsSet = null;
+		self.pauseInfo = null;
+		
+		self.recStartTime = (new Date()).getTime();
+		self.intervalId = window.setInterval(self.onInterval, self.timeInterval);
+		self.started = true;
+	}
+	
+	this.stop = function() {
+		if (self.intervalId != null) {
+			window.clearInterval(self.intervalId);
+			self.intervalId = null;
+		}
+		self.started = false;
+	}
+	
+	this.onInterval = function() {
+		if (self.buffer.length > 0) {
+			var timeSlot = (new Date()).getTime() - self.recStartTime;
+			
+			var timeSlot = (new Date()).getTime() - self.recStartTime;
+			
+			if (self.currActionSet == null) {
+				self.currActionSet = new ActionsSet(timeSlot, self.buffer);
+				self.actionsSet = self.currActionSet;
+			} else {
+				var tmpActionSet = self.currActionSet;
+				self.currActionSet = new ActionsSet(timeSlot, self.buffer);
+				tmpActionSet.next = self.currActionSet;
+			}
+			
+			self.buffer = new Array();
+			self.currTime += self.timeInterval;
+		}
+	}
+}
+
+Action = function() {
+	var self = this;
+	this.actionType; // 1 - Point
+	this.x = 0;
+	this.y = 0;
+	this.isMovable = false;
+	this.index = 0;
+	
+	if (arguments.length > 0) {
+		self.actionType = arguments[0];
+	}
+	if (arguments.length > 2) {
+		self.x = arguments[1];
+		self.y = arguments[2];
+	}
+}
+
+Point = function(argX, argY, typeArg) {
+	var self = this;
+	this.type = typeArg; //0 - moveto, 1 - lineto
+	
+	Action.call(this, 1, argX, argY);
+}
+
+Point.prototype = new Action();
+
+
+
+
+
+
+
+
+
+

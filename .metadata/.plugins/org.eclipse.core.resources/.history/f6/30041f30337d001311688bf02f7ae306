@@ -1,0 +1,13 @@
+#content {
+	width: 880px;
+}
+
+.demo-container {
+	width: 850px;
+	height: 450px;
+}
+
+.demo-placeholder {
+	width: 850px;
+	height: 450px;
+}

@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>Let's try Flot</title>
+	<link href="test.css" rel="stylesheet" type="text/css">
+	<script language="javascript" type="text/javascript" src="flot/jquery.js"></script>
+	<script language="javascript" type="text/javascript" src="flot/jquery.flot.js"></script>
+	<script language="javascript" type="text/javascript" src="pluginPractice.js"></script>
+	<script language="javascript" type="text/javascript" src="test.js"></script>
+</head>
+<body>
+	<div id="content">
+		<div class="demo-container">
+			<div id="placeholder" class="demo-placeholder"></div>
+		</div>
+	</div>
+	<form id="tool">
+		<input type="radio" name="sex" value="male">Male<br>
+		<input type="radio" name="sex" value="female">Female
+	</form> 
+	<div id="feedback">
+	</div>
+</body>
+</html>

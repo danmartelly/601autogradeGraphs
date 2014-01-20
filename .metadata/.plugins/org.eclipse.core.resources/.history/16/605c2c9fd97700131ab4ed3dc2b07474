@@ -1,0 +1,53 @@
+/*
+* @author : Daniel Martelly
+* Heavily dependent on code from Ram Kulkarni
+*/
+
+PointRecordDrawing = function (canvasId) {
+	var self = this;
+	this.canvas = null;
+	this.width = this.height = 0;
+	this.actions = new Array();
+	this.ctx = null;
+	this.mouseDown = false;
+	this.currentRecording = null;
+	this.recordings = new Array();
+	this.lastMouseX = this.lastMouseY = -1;
+	this.bgColor = "rgb(255, 255, 255)";
+	var currentLineWidth = 5;
+	var drawingColor = "rgb(0,0,0)";
+	var pauseInfo = null;
+	
+	onMouseDown = function(event) {
+		var canvasX = $(self.canvas).offset().left;
+		var canvasY = $(self.canvas).offset().top;
+		
+		self.mouseDown = true;
+		var x = Math.floor(event.pageX - canvasX);
+		var y = Math.floor(event.pageY - canvasY);
+		
+		var currAction = new Point(x, y, 0);
+		self.drawAction(currAction, true);
+		if (self.currentRecording != null) {
+			self.currentRecording.addAction(currAction);
+		}
+		event.preventDefault();
+		return false;
+	}
+	
+	onMouseMove = function(event) {
+		if (self.mouseDown) {
+			var canvasX = $(self.canvas).offset().left;
+			var canvasY = $(self.canvas).offset().top;
+			
+			var x = Math.floor(event.pageX - canvasX);
+			var y = Math.floor(event.pageY - canvasY);
+			
+			var action = new Point(x,y,1);
+			self.drawAction(action, true);
+			if (self.currentRecording != null) {
+				self.currentRecording.addAction(action);
+			}
+		}
+	}
+};

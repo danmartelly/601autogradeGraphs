@@ -1,0 +1,17 @@
+<html>
+<head>
+	<title>Let's try Flot</title>
+	<link href="test.css" rel="stylesheet" type="text/css">
+	<script language="javascript" type="text/javascript" src="flot/jquery.js"></script>
+	<script language="javascript" type="text/javascript" src="flot/jquery.flot.js"></script>
+	
+	<script language="javascript" type="text/javascript" src="test.js"></script>
+</head>
+<body>
+	<div id="content">
+		<div class="demo-container">
+			<div id="placeholder" class="demo-placeholder"></div>
+		</div>
+	</div>
+</body>
+</html>

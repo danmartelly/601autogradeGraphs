@@ -1,0 +1,43 @@
+$(function() {
+	
+	var answerData = [[0,3], [4,8], [8,5], [7,7], [9,13]];
+	var studentData = [];
+	var plot = null;
+	
+	var rePlot = function() {
+		var allData = [];
+		if ($("#studentCheckbox").prop("checked")) {
+			allData.push(studentData);
+		}
+		if ($("#answerCheckbox").prop("checked")) {
+			allData.push(answerData);
+		}
+		plot = $.plot($("#placeholder"), allData, {
+			
+		});
+	};
+	rePlot();
+	
+	$("#placeholder").bind("plothover", function (event, pos, item) {
+		//mouse position
+		var str = "mouse: (" + pos.x.toFixed(2) + ", " + pos.y.toFixed(2) + ")";
+		//check datapoint
+		if (item) {
+			var x = item.datapoint[0].toFixed(2),
+				y = item.datapoint[1].toFixed(2);
+			str += "\nData: (" + x + ", " + y + ")";
+		}
+		$("#feedback").text(str);
+	});
+	
+	$("#showGraphs").change(rePlot);
+	
+	$("#compareButton").click(function(e) {
+		console.log("compare");
+	});
+	
+	// way to compare the data
+	function compareData(refArray, otherArray) {
+		
+	}
+});
