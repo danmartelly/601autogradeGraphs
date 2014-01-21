@@ -12,7 +12,7 @@ $(function() {
 		if ($("#answerCheckbox").prop("checked")) {
 			allData.push(answerData);
 		}
-		var percentage = parseFloat($("#percentAmount").val());
+		var percentage = $("#percentAmount").val();
 		if ($("#plusPercent").prop("checked")) {
 			var change = 1 + percentage;
 			var moreData = [];
@@ -29,10 +29,13 @@ $(function() {
 			});
 			allData.push(moreData);
 		}
-		var interval = parseFloat($("#intervalAmount").val(), 10);
+		var interval = parseInt($("#intervalAmount").val(), 10);
+		console.log(interval);
 		if ($("#plusInterval").prop("checked")) {
 			var moreData = [];
 			$.each(answerData, function(index, value) {
+				console.log(interval);
+				console.log(value[1]+interval);
 				moreData.push([value[0], value[1]+interval]);
 			});
 			allData.push(moreData);

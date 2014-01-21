@@ -80,10 +80,7 @@
         	var x = positem[0].x,
         	y = positem[0].y;
     		var s = plot.getData();
-    		console.log(s);
-    		var a = [x,y];
-    		a.time = 50;
-    		s[0].data.push(a);
+    		s[0].data.push([x,y]);
     		plot.setData(s);
     		plot.draw();
         }

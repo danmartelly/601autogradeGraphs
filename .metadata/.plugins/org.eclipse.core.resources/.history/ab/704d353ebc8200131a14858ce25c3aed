@@ -12,25 +12,24 @@ $(function() {
 		if ($("#answerCheckbox").prop("checked")) {
 			allData.push(answerData);
 		}
-		var percentage = parseFloat($("#percentAmount").val());
 		if ($("#plusPercent").prop("checked")) {
-			var change = 1 + percentage;
+			var percentage = 1.1;
 			var moreData = [];
 			$.each(answerData, function(index, value) {
-				moreData.push([value[0], value[1]*change]);
+				moreData.push([value[0], value[1]*percentage]);
 			});
 			allData.push(moreData);
 		}
 		if ($("#minusPercent").prop("checked")) {
-			var change = 1 - percentage;
+			var percentage = .9;
 			var moreData = [];
 			$.each(answerData, function(index, value) {
-				moreData.push([value[0], value[1]*change]);
+				moreData.push([value[0], value[1]*percentage]);
 			});
 			allData.push(moreData);
 		}
-		var interval = parseFloat($("#intervalAmount").val(), 10);
 		if ($("#plusInterval").prop("checked")) {
+			var interval = 1;
 			var moreData = [];
 			$.each(answerData, function(index, value) {
 				moreData.push([value[0], value[1]+interval]);
@@ -38,6 +37,7 @@ $(function() {
 			allData.push(moreData);
 		}
 		if ($("#minusInterval").prop("checked")) {
+			var interval = 1;
 			var moreData = [];
 			$.each(answerData, function(index, value) {
 				moreData.push([value[0], value[1]-interval]);

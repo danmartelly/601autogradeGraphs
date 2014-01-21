@@ -19,11 +19,10 @@
 	</form> 
 	<form id="showGraphs">
 		<input id="answerCheckbox" type="checkbox" name="tool" value="answerGraph">Show answer graph
-		<input id="studentCheckbox" type="checkbox" name="tool" value="studentGraph" checked="checked">Show student's graph
-		<input id="percentAmount" type="text" name="tool">
+		<input id ="studentCheckbox" type="checkbox" name="tool" value="studentGraph" checked="checked">Show student's graph
+		<input id = "percentAmount" type="text" name="tool"><br>
 		<input id="plusPercent" type="checkbox" name="tool" value="plusPercent">Plus ten percent
 		<input id="minusPercent" type="checkbox" name="tool" value="minusPercent">Minus ten percent
-		<input id="intervalAmount" type="text" name="tool">
 		<input id="plusInterval" type="checkbox" name="tool" value="plusInterval">Plus interval
 		<input id="minusInterval" type="checkbox" name="tool" value="minusInterval">Minus interval
 	</form>
