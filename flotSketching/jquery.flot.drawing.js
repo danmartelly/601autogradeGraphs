@@ -1,12 +1,16 @@
 (function ($) {
 	
-	var MOVE_DISTANCE_FOR_NEW_POINT = 10;
+	var MOVE_DISTANCE_FOR_NEW_POINT = 20;
+	var MAX_NEARBY_DISTANCE = 10;
 	
 	var options = {};
 	
+	
+	
     function init(plot) {
     	var opt = null, evtHolder = null, plotOffset = null, 
-    	placeholder = null;
+    	placeholder = null, data = [[],[]]; // always modify this data set
+    	
     	plot.hooks.bindEvents.push(bindEvents);
     	function bindEvents(plot, eventHolder) {
     		opt = plot.getOptions();
@@ -31,6 +35,8 @@
     			addGraphPoint(positem);
     		} else if ($("#eraserRadio").prop("checked")) {
     			
+    		} else if ($("#movePointRadio").prop("checked")) {
+    			
     		}
         	
     		placeHolder.trigger("plotdown", positem);
@@ -47,8 +53,8 @@
         		offset = evtHolder.offset();
             	var canvasX = e.pageX - offset.left - plotOffset.left,
             	canvasY = e.pageY - offset.top - plotOffset.top;
-            	var s = plot.getData();
-            	var prev = s[0].data[s[0].data.length-1];
+            	var s = getStudentData();
+            	var prev = s.data[s.data.length-1];
             	var prevPos = plot.p2c({'x': prev[0], 'y': prev[1]});
             	var pCanvasX = prevPos.left,
             	pCanvasY = prevPos.top;
@@ -66,6 +72,8 @@
     		placeHolder.trigger("plothover", positem);
         }
         
+        // returns the equivalent plot position (pos) and the closest
+        // point (item) from the student graph
         function getMousePosition(e) {
         	var pos, item = null, offset = evtHolder.offset();
         	var canvasX = e.pageX - offset.left - plotOffset.left,
@@ -76,16 +84,43 @@
         	return [pos, item];
         }
         
+        function findNearbyItem(plotX,plotY) {
+        	
+        }
+        
         function addGraphPoint(positem) {
         	var x = positem[0].x,
         	y = positem[0].y;
-    		var s = plot.getData();
-    		console.log(s);
+    		var s = getStudentData();
     		var a = [x,y];
-    		a.time = 50;
-    		s[0].data.push(a);
-    		plot.setData(s);
+    		s.data.push(a);
+    		// functionify the student data by sorting the points based on x value
+        	s.data = s.data.sort(function(a,b) {
+        		return a[0] - b[0];
+        	});
+    		if (s.timeData == null) {s.timeData = [];}
+    		s.timeData[s.data.length - 1] = new Date().getTime(); //in milliseconds
+    		setStudentData(s);
     		plot.draw();
+        }
+        
+        function getStudentData() {
+        	var s = plot.getData();
+        	for (var i = 0; i < s.length; i++) {
+        		if (s[i].label == "studentData") {
+        			return s[i];
+        		}
+        	}
+        }
+        
+        function setStudentData(series) {
+        	var s = plot.getData();
+        	for (var i = 0; i < s.length; i++) {
+        		if (s[i].label == "studentData") {
+        			s[i] = series;
+        		}
+        	}
+        	plot.setData(s);
         }
         
         function distance(x1, y1, x2, y2) {
@@ -111,6 +146,8 @@
         
         plot.hooks.shutdown.push(shutdown);
     }
+    
+    
 
     $.plot.plugins.push({
         init: init,

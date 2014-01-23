@@ -1,7 +1,15 @@
 $(function() {
 	
-	var answerData = [[0,3], [4,8], [8,5], [7,7], [9,13]];
-	var studentData = [];
+	var answerData = {
+		label: "answerData"
+		, data: [[0,0], [1,1], [2,4], [3,9], [4,16]]
+	};
+	var studentData = {
+		label: "studentData"
+		, data: []
+		, points: { show: true }
+		, lines: { show: true }
+	};
 	var plot = null;
 	
 	var rePlot = function() {
@@ -16,33 +24,45 @@ $(function() {
 		if ($("#plusPercent").prop("checked")) {
 			var change = 1 + percentage;
 			var moreData = [];
-			$.each(answerData, function(index, value) {
+			$.each(answerData.data, function(index, value) {
 				moreData.push([value[0], value[1]*change]);
 			});
-			allData.push(moreData);
+			allData.push({
+				label: "plusPercent"
+				, data: moreData
+			});
 		}
 		if ($("#minusPercent").prop("checked")) {
 			var change = 1 - percentage;
 			var moreData = [];
-			$.each(answerData, function(index, value) {
+			$.each(answerData.data, function(index, value) {
 				moreData.push([value[0], value[1]*change]);
 			});
-			allData.push(moreData);
+			allData.push({
+				label: "minusPercent"
+				, data: moreData
+			});
 		}
 		var interval = parseFloat($("#intervalAmount").val(), 10);
 		if ($("#plusInterval").prop("checked")) {
 			var moreData = [];
-			$.each(answerData, function(index, value) {
+			$.each(answerData.data, function(index, value) {
 				moreData.push([value[0], value[1]+interval]);
 			});
-			allData.push(moreData);
+			allData.push({
+				label: "plusInterval"
+				, data: moreData
+			});
 		}
 		if ($("#minusInterval").prop("checked")) {
 			var moreData = [];
-			$.each(answerData, function(index, value) {
+			$.each(answerData.data, function(index, value) {
 				moreData.push([value[0], value[1]-interval]);
 			});
-			allData.push(moreData);
+			allData.push({
+				label: "minusInterval"
+				, data: moreData
+			});
 		}
 		
 		plot = $.plot($("#placeholder"), allData, {
@@ -74,6 +94,11 @@ $(function() {
 		var otherArray = s[0].data;
 		var compareResult = compareData(refArray, otherArray, minx, maxx, (maxx-minx)/10);
 		$("#feedback").text(compareResult["variance"]);
+	});
+	
+	$("#toJSON").click(function(e) {
+		var jsonData = JSON.stringify(plot.getData());
+		$("#jsonText").val(jsonData);
 	});
 	
 	// way to compare the data
