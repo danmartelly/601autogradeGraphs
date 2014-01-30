@@ -9,16 +9,15 @@
 	<script type="text/javascript" src="test.js"></script>
 </head>
 <body>
-	<div id="content">
-		<div class="demo-container">
-			<div id="placeholder" class="demo-placeholder"></div>
-		</div>
+	<div class="flotContainer">
+		<div class="flotPlaceholder" style="width:500px;height:300px"></div>
+		<form>
+			<input class="flotPencilRadio" type="radio" checked="checked">Pencil
+			<input class="flotEraserRadio" type="radio">Eraser
+			<input class="flotMovePointRadio" type="radio">Move Points
+		</form>
 	</div>
-	<form id="tool">
-		<input id="pencilRadio" type="radio" name="tool" value="pencil" checked="checked">Pencil
-		<input id ="eraserRadio" type="radio" name="tool" value="eraser">Eraser (Not working)
-		<input id="movePointRadio" type="radio" name="tool" value="movePoint">Move Points (Not working)
-	</form> 
+	 
 	<form id="showGraphs">
 		<input id="answerCheckbox" type="checkbox" name="tool" value="answerGraph">Show answer graph
 		<input id="studentCheckbox" type="checkbox" name="tool" value="studentGraph" checked="checked">Show student's graph

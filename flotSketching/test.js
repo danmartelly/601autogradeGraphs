@@ -1,9 +1,31 @@
 $(function() {
+	function genericSin(x, amp, freq, xShift, offset) {
+		return amp*Math.sin(2*Math.PI*freq*(x - xShift)) + offset;
+	}
+	function genericExp(x, initial, factor, timeConst, xShift, offset) {
+		return initial*Math.pow(factor,((x-xShift)/timeConst)) + offset;
+	}
 	
 	var answerData = {
 		label: "answerData"
-		, data: [[0,0], [1,1], [2,4], [3,9], [4,16]]
+		, data: []
+		, points: {show: true}
 	};
+	for (var i = 0; i < 14; i += 0.5) {
+		answerData.data.push([i, genericExp(i, 1, 2, 1, 0, 0)]);
+	}
+	
+	var plotData = {
+		label: "plotData"
+		, data: []
+		, points: {show: true}
+	};
+
+	for (var i = 0; i < 14; i += 0.5) {
+//		plotData.data.push([i, genericSin(i, 2.15452795, 0.99964759, 0.99957028, 0.04148915)]);
+		plotData.data.push([i, genericExp(i, 4.1239, 1.907, .9314, 2.044, 0)]);
+	}
+	
 	var studentData = {
 		label: "studentData"
 		, data: []
@@ -20,6 +42,8 @@ $(function() {
 		if ($("#answerCheckbox").prop("checked")) {
 			allData.push(answerData);
 		}
+		allData.push(plotData);
+		
 		var percentage = parseFloat($("#percentAmount").val());
 		if ($("#plusPercent").prop("checked")) {
 			var change = 1 + percentage;
@@ -64,12 +88,14 @@ $(function() {
 				, data: moreData
 			});
 		}
-		
-		plot = $.plot($("#placeholder"), allData, {
-			
+
+		elements = $(".flotPlaceholder");
+		elements.each(function () {
+			$(this).plot = $.plot($(this), allData, {});
 		});
 	};
 	rePlot();
+	console.log($(".flotPlaceholder")[0]);
 	
 	$("#placeholder").bind("plothover", function (event, pos, item) {
 		//mouse position

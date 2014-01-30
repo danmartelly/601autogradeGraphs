@@ -19,7 +19,7 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.css.core.csssource.source" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.html.core.htmlsource.source" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -34,10 +34,11 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
+<part id="2"/>
 </presentation>
 </folder>
 </info>
-<info part="org.eclipse.ui.internal.EditorStack@4e8ee340" ratio="0.5" ratioLeft="652" ratioRight="652" relationship="2" relative="DefaultEditorWorkbook">
+<info part="org.eclipse.ui.internal.EditorStack@4e8ee340" ratio="0.5449654" ratioLeft="709" ratioRight="592" relationship="2" relative="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
@@ -47,17 +48,17 @@
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.wst.html.core.htmlsource.source" name="test.html" partName="test.html" path="C:/Users/martelly/Documents/MIT/6.01 - UROP/workspace/flotSketching/test.html" title="test.html" tooltip="flotSketching/test.html" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.wst.html.core.htmlsource.source" name="test.html" partName="test.html" path="C:/Users/martelly/Documents/MIT/6.01 - UROP/601autogradeGraphs/flotSketching/test.html" title="test.html" tooltip="flotSketching/test.html" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/flotSketching/test.html"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1116" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="1786" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
-<editor focus="true" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="jquery.flot.drawing.js" partName="jquery.flot.drawing.js" path="C:/Users/martelly/Documents/MIT/6.01 - UROP/workspace/flotSketching/jquery.flot.drawing.js" title="jquery.flot.drawing.js" tooltip="flotSketching/jquery.flot.drawing.js" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="jquery.flot.drawing.js" partName="jquery.flot.drawing.js" path="C:/Users/martelly/Documents/MIT/6.01 - UROP/601autogradeGraphs/flotSketching/jquery.flot.drawing.js" title="jquery.flot.drawing.js" tooltip="flotSketching/jquery.flot.drawing.js" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/flotSketching/jquery.flot.drawing.js"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3568" selectionTopPixel="1048"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3568" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="test.js" partName="test.js" path="C:/Users/martelly/Documents/MIT/6.01 - UROP/workspace/flotSketching/test.js" title="test.js" tooltip="flotSketching/test.js" workbook="org.eclipse.ui.internal.EditorStack@4e8ee340">
+<editor focus="true" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="test.js" partName="test.js" path="C:/Users/martelly/Documents/MIT/6.01 - UROP/601autogradeGraphs/flotSketching/test.js" title="test.js" tooltip="flotSketching/test.js" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/flotSketching/test.js"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2089" selectionTopPixel="553"/>
+<editorState selectionHorizontalPixel="0" selectionLength="17" selectionOffset="656" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.ui.DefaultTextEditor" name="API.md" partName="API.md" path="C:/Users/martelly/Documents/MIT/6.01 - UROP/workspace/flotSketching/flot/API.md" title="API.md" tooltip="flotSketching/flot/API.md" workbook="org.eclipse.ui.internal.EditorStack@4e8ee340">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/flotSketching/flot/API.md"/>
@@ -66,6 +67,10 @@
 <editor id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="jquery.flot.js" partName="jquery.flot.js" path="C:/Users/martelly/Documents/MIT/6.01 - UROP/workspace/flotSketching/flot/jquery.flot.js" title="jquery.flot.js" tooltip="flotSketching/flot/jquery.flot.js" workbook="org.eclipse.ui.internal.EditorStack@4e8ee340">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/flotSketching/flot/jquery.flot.js"/>
 <editorState selectionHorizontalPixel="0" selectionLength="7" selectionOffset="25844" selectionTopPixel="8955"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.wst.html.core.htmlsource.source" name="tutorView.html" partName="tutorView.html" path="C:/Users/martelly/Documents/MIT/6.01 - UROP/601autogradeGraphs/flotSketching/tutorView.html" title="tutorView.html" tooltip="flotSketching/tutorView.html" workbook="org.eclipse.ui.internal.EditorStack@4e8ee340">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/flotSketching/tutorView.html"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1094" selectionTopPixel="343"/>
 </editor>
 </editors>
 <views>
@@ -89,7 +94,9 @@
 </view>
 <view id="org.eclipse.wst.jsdt.ui.PackageExplorer" partName="Script Explorer">
 <viewState group_libraries="1" isWindowWorkingSet="false" layout="1" linkWithEditor="0" rootMode="1" workingSetName="">
-<customFilters userDefinedPatternsEnabled="false">&#x0A;<xmlDefinedFilters>&#x0A;<child filterId="org.eclipse.wst.jsdt.ui.PackageExplorer.ClosedProjectsFilter" isEnabled="false"/>
+<customFilters userDefinedPatternsEnabled="false">
+<xmlDefinedFilters>
+<child filterId="org.eclipse.wst.jsdt.ui.PackageExplorer.ClosedProjectsFilter" isEnabled="false"/>
 <child filterId="org.eclipse.wst.jsdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
 <child filterId="org.eclipse.wst.jsdt.ui.PackageExplorer.StaticsFilter" isEnabled="false"/>
 <child filterId="org.eclipse.wst.jsdt.ui.PackageExplorer.LocalTypesFilter" isEnabled="false"/>
@@ -106,7 +113,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.wst.jsdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.wst.html.core.htmlsource.source" activePerspective="org.eclipse.wst.jsdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="1" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.wst.jsdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.wst.jsdt.ui.JavaPerspective" label="JavaScript"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -168,7 +175,7 @@
 <layout>
 <mainWindow>
 <info folder="true" part="left">
-<folder appearance="2" expanded="2">
+<folder appearance="2" expanded="0">
 <page content="org.eclipse.wst.jsdt.ui.PackageExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.wst.jsdt.ui.TypeHierarchy" label="LabelNotFound"/>
@@ -199,8 +206,8 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@5555f52c" ratio="0.7722222" ratioLeft="834" ratioRight="246" relationship="2" relative="org.eclipse.ui.editorss">
-<folder appearance="2" expanded="2">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@5555f52c" ratio="0.80597013" ratioLeft="918" ratioRight="221" relationship="2" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="0">
 <page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
@@ -215,83 +222,15 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" path="/flotSketching/test.js"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/flotSketching/flot/API.md"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" path="/flotSketching/jquery.flot.drawing.js"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" path="/Sketching/test.js"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" path="/Sketching/sketch.js"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" path="/Sketching/PointRecordDrawing.js"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" path="/flotSketching/flot/jquery.flot.js"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" path="/flotSketching/jquery.flot.drawing.js"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" path="/flotSketching/test.js"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.html.core.htmlsource.source" path="/flotSketching/test.html"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.wst.html.core.htmlsource.source" uri="file:/C:/Users/martelly/Documents/MIT/6.01%20-%20UROP/catsoop/tutor/__MEDIA__/pages/main.html"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" uri="file:/C:/Users/martelly/Documents/MIT/6.01%20-%20UROP/catsoop/tutor/__MEDIA__/templates/main.template"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.html.core.htmlsource.source" path="/flotSketching/tutorView.html"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" path="/flotSketching/jquery.flot.drawing.js"/>
 </editors>
-<item historyLabel="test.js" index="0">
-<position info="not_deleted" x="861" y="0"/>
-</item>
-<item historyLabel="test.js" index="0">
-<position/>
-</item>
-<item historyLabel="test.js" index="0">
-<position/>
-</item>
-<item historyLabel="test.js" index="0">
-<position/>
-</item>
-<item historyLabel="API.md" index="1">
-<position info="not_deleted" x="3107" y="0"/>
-</item>
-<item historyLabel="test.js" index="0">
-<position/>
-</item>
-<item historyLabel="API.md" index="1">
-<position info="not_deleted" x="3084" y="5"/>
-</item>
-<item historyLabel="test.js" index="0">
-<position info="not_deleted" x="872" y="0"/>
-</item>
-<item historyLabel="jquery.flot.drawing.js" index="2">
-<position info="not_deleted" x="354" y="0"/>
-</item>
-<item historyLabel="test.js" index="0">
-<position info="not_deleted" x="1182" y="0"/>
-</item>
-<item historyLabel="test.js" index="0">
-<position info="not_deleted" x="983" y="0"/>
-</item>
-<item historyLabel="test.js" index="0">
-<position info="not_deleted" x="1007" y="0"/>
-</item>
-<item historyLabel="test.js" index="0">
-<position info="not_deleted" x="1038" y="0"/>
-</item>
-<item historyLabel="test.js" index="0">
-<position info="not_deleted" x="1680" y="0"/>
-</item>
-<item historyLabel="test.js" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="sketch.js" index="4">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="PointRecordDrawing.js" index="5">
-<position info="not_deleted" x="4360" y="0"/>
-</item>
-<item historyLabel="sketch.js" index="4">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="test.js" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="test.js" index="0">
-<position info="not_deleted" x="1680" y="0"/>
-</item>
-<item historyLabel="test.js" index="0">
-<position info="not_deleted" x="1828" y="0"/>
-</item>
-<item historyLabel="test.js" index="0">
-<position info="not_deleted" x="1912" y="0"/>
-</item>
-<item historyLabel="test.js" index="0">
-<position info="not_deleted" x="1935" y="0"/>
-</item>
-<item historyLabel="test.js" index="0">
-<position info="not_deleted" x="2021" y="0"/>
-</item>
 <item historyLabel="test.js" index="0">
 <position info="not_deleted" x="1971" y="0"/>
 </item>
@@ -334,10 +273,10 @@
 <item historyLabel="API.md" index="1">
 <position info="not_deleted" x="7690" y="4"/>
 </item>
-<item historyLabel="jquery.flot.js" index="6">
+<item historyLabel="jquery.flot.js" index="3">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="jquery.flot.js" index="6">
+<item historyLabel="jquery.flot.js" index="3">
 <position info="not_deleted" x="25844" y="7"/>
 </item>
 <item historyLabel="jquery.flot.drawing.js" index="2">
@@ -367,8 +306,80 @@
 <item historyLabel="jquery.flot.drawing.js" index="2">
 <position info="not_deleted" x="3568" y="0"/>
 </item>
-<item active="true" historyLabel="test.js" index="0">
+<item historyLabel="test.js" index="0">
 <position info="not_deleted" x="2089" y="0"/>
+</item>
+<item historyLabel="jquery.flot.drawing.js" index="4">
+<position info="not_deleted" x="3568" y="0"/>
+</item>
+<item historyLabel="test.js" index="5">
+<position info="not_deleted" x="1430" y="0"/>
+</item>
+<item historyLabel="test.js" index="5">
+<position info="not_deleted" x="207" y="0"/>
+</item>
+<item historyLabel="test.js" index="5">
+<position info="not_deleted" x="221" y="0"/>
+</item>
+<item historyLabel="test.js" index="5">
+<position info="not_deleted" x="864" y="0"/>
+</item>
+<item historyLabel="test.html" index="6">
+<position info="not_deleted" x="1116" y="0"/>
+</item>
+<item historyLabel="test.html" index="6">
+<position/>
+</item>
+<item historyLabel="main.html" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="test.html" index="6">
+<position/>
+</item>
+<item historyLabel="main.template" index="8">
+<position info="not_deleted" x="417" y="0"/>
+</item>
+<item historyLabel="test.html" index="6">
+<position/>
+</item>
+<item historyLabel="test.js" index="5">
+<position info="not_deleted" x="226" y="0"/>
+</item>
+<item historyLabel="tutorView.html" index="9">
+<position/>
+</item>
+<item historyLabel="test.html" index="6">
+<position/>
+</item>
+<item historyLabel="tutorView.html" index="9">
+<position/>
+</item>
+<item historyLabel="test.html" index="6">
+<position/>
+</item>
+<item historyLabel="jquery.flot.drawing.js" index="10">
+<position info="not_deleted" x="3568" y="0"/>
+</item>
+<item historyLabel="tutorView.html" index="9">
+<position info="not_deleted" x="239" y="0"/>
+</item>
+<item historyLabel="test.js" index="5">
+<position info="not_deleted" x="226" y="0"/>
+</item>
+<item historyLabel="tutorView.html" index="9">
+<position info="not_deleted" x="1603" y="0"/>
+</item>
+<item historyLabel="test.js" index="5">
+<position info="not_deleted" x="0" y="4183"/>
+</item>
+<item historyLabel="tutorView.html" index="9">
+<position info="not_deleted" x="1308" y="0"/>
+</item>
+<item historyLabel="test.js" index="5">
+<position info="not_deleted" x="656" y="17"/>
+</item>
+<item active="true" historyLabel="tutorView.html" index="9">
+<position info="not_deleted" x="1432" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -394,6 +405,15 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.html.core.htmlsource.source" name="tutorView.html" tooltip="flotSketching/tutorView.html">
+<persistable path="/flotSketching/tutorView.html"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="main.template" tooltip="C:\Users\martelly\Documents\MIT\6.01 - UROP\catsoop\tutor\__MEDIA__\templates\main.template">
+<persistable uri="file:/C:/Users/martelly/Documents/MIT/6.01%20-%20UROP/catsoop/tutor/__MEDIA__/templates/main.template"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.wst.html.core.htmlsource.source" name="main.html" tooltip="C:\Users\martelly\Documents\MIT\6.01 - UROP\catsoop\tutor\__MEDIA__\pages\main.html">
+<persistable uri="file:/C:/Users/martelly/Documents/MIT/6.01%20-%20UROP/catsoop/tutor/__MEDIA__/pages/main.html"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="jquery.flot.js" tooltip="flotSketching/flot/jquery.flot.js">
 <persistable path="/flotSketching/flot/jquery.flot.js"/>
 </file>
@@ -429,15 +449,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="jquery.flot.stack.js" tooltip="flotSketching/flot/jquery.flot.stack.js">
 <persistable path="/flotSketching/flot/jquery.flot.stack.js"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="jquery.flot.symbol.js" tooltip="flotSketching/flot/jquery.flot.symbol.js">
-<persistable path="/flotSketching/flot/jquery.flot.symbol.js"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="jquery.flot.threshold.js" tooltip="flotSketching/flot/jquery.flot.threshold.js">
-<persistable path="/flotSketching/flot/jquery.flot.threshold.js"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="jquery.flot.time.js" tooltip="flotSketching/flot/jquery.flot.time.js">
-<persistable path="/flotSketching/flot/jquery.flot.time.js"/>
 </file>
 </mruList>
 </workbench>
