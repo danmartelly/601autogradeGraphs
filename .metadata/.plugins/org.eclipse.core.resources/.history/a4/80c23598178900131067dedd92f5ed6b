@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title>Let's try Flot</title>
+	<link href="test.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="flot/jquery.js"></script>
+	<script type="text/javascript" src="flot/jquery.flot.js"></script>
+	<script type="text/javascript" src="jquery.flot.drawing.js"></script>
+</head>
+<body>
+	<div>
+		<div id="placeholder" style="width:500px;height:300px"></div>
+		<form id="tool">
+		<input id="pencilRadio" type="radio" name="tool" value="pencil" checked="checked">Pencil
+		<input id ="eraserRadio" type="radio" name="tool" value="eraser">Eraser
+		<input id="movePointRadio" type="radio" name="tool" value="movePoint">Move Points
+	</form> 
+	</div>
+</body>
+</html>

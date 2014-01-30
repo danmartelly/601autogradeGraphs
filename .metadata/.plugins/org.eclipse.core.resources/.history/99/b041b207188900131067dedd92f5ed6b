@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>Let's try Flot</title>
+	<link href="test.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="flot/jquery.js"></script>
+	<script type="text/javascript" src="flot/jquery.flot.js"></script>
+	<script type="text/javascript" src="jquery.flot.drawing.js"></script>
+</head>
+<body>
+	<div>
+		<div id="placeholder" style="width:500px;height:300px"></div>
+		<form id="tool">
+		<input id="pencilRadio" type="radio" name="tool" value="pencil" checked="checked">Pencil
+		<input id ="eraserRadio" type="radio" name="tool" value="eraser">Eraser
+		<input id="movePointRadio" type="radio" name="tool" value="movePoint">Move Points
+	</form> 
+	</div>
+	<script type="text/javascript">
+	$(function() {
+		
+		var answerData = {
+			label: "answerData"
+			, data: []
+		};
+		for (var i = 0; i < 14; i += 0.5) {
+			answerData.data.push([i, Math.sin(i)]);
+		}
+		
+		var plotData = {
+			label: "plotData"
+			, data: []
+		};
+		
+		function genericSin(x, amp, freq, xShift, offset) {
+			return amp*Math.sin(2*Math.PI*freq*(x - xShift)) + offset
+		}
+		for (var i = 0; i < 14; i += 0.5) {
+			plotData.data.push([i, genericSin(i, 2.15452795, 0.99964759, 0.99957028, 0.04148915)]);
+		}
+		
+		var studentData = {
+			label: "studentData"
+			, data: []
+			, points: { show: true }
+			, lines: { show: true }
+		};
+		var plot = null;
+		
+		var rePlot = function() {
+			//var allData = [];
+			//allData.push(plotData);
+			allData.push(studentData);
+			
+			plot = $.plot($("#placeholder"), allData, {
+				
+			});
+		};
+		rePlot();
+	});
+	</script>
+</body>
+</html>
