@@ -9,7 +9,7 @@
 	
     function init(plot) {
     	var opt = null, evtHolder = null, plotOffset = null, 
-    	placeholder = null, moveItem = null; // always modify this data set
+    	placeholder = null, container = null, moveItem = null; // always modify this data set
     	
     	plot.hooks.bindEvents.push(bindEvents);
     	function bindEvents(plot, eventHolder) {
@@ -17,6 +17,7 @@
     		evtHolder = eventHolder;
     		plotOffset = plot.getPlotOffset();
     		placeHolder = plot.getPlaceholder();
+    		container = placeHolder.parent();
     		
     		evtHolder.mousedown(onMouseDown);
     		evtHolder.mouseup(onMouseUp);
@@ -31,11 +32,12 @@
     	
     	function onMouseDown(e) {
     		var positem = getMousePosition(e);
-    		if ($("#pencilRadio").prop("checked")) {
+    		
+    		if (container.find(".flotPencilRadio").prop("checked")) {
     			addGraphPoint(positem);
-    		} else if ($("#eraserRadio").prop("checked")) {
+    		} else if (container.find(".flotEraserRadio").prop("checked")) {
     			removeGraphPoint(positem);
-    		} else if ($("#movePointRadio").prop("checked")) {
+    		} else if (container.find(".flotMovePointRadio").prop("checked")) {
     			moveItem = positem[1];
     		}
         	
@@ -51,7 +53,7 @@
         function onMouseMove(e) {
         	var positem = getMousePosition(e);
         	if (e.buttons) {
-        		if ($("#pencilRadio").prop("checked")) {
+        		if (container.find(".flotPencilRadio").prop("checked")) {
 	        		offset = evtHolder.offset();
 	            	var canvasX = e.pageX - offset.left - plotOffset.left,
 	            	canvasY = e.pageY - offset.top - plotOffset.top;
@@ -61,10 +63,10 @@
 	            	pCanvasY = pointPos.top;
 	            	if (distance(canvasX, canvasY, pCanvasX, pCanvasY) > MOVE_DISTANCE_FOR_NEW_POINT) {
 	            		addGraphPoint(positem);
-	            	}
-            	} else if ($("#eraserRadio").prop("checked")) {
+	            	} 
+            	} else if (container.find(".flotEraserRadio").prop("checked")) {
             		removeGraphPoint(positem);
-            	} else if ($("#movePointRadio").prop("checked")) {
+            	} else if (container.find(".flotMovePointRadio").prop("checked")) {
             		if (moveItem) {
             			var s = getStudentData(),
             			x = positem[0].x,

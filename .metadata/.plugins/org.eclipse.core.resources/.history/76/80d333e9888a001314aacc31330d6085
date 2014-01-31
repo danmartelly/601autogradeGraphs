@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>Let's try Flot</title>
+	<link href="test.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="flot/jquery.js"></script>
+	<script type="text/javascript" src="flot/jquery.flot.js"></script>
+	<script type="text/javascript" src="jquery.flot.drawing.js"></script>
+	<script type="text/javascript" src="JSON.js"></script>
+	<script type="text/javascript" src="test.js"></script>
+</head>
+<body>
+	<div class="flotContainer">
+		<div class="flotPlaceholder" style="width:500px;height:300px"></div>
+		<form>
+			<input class="flotPencilRadio" type="radio" checked="checked">Pencil
+			<input class="flotEraserRadio" type="radio">Eraser
+			<input class="flotMovePointRadio" type="radio">Move Points
+		</form>
+		<form class="showGraphs">
+		<input class="answerCheckbox" type="checkbox" name="tool" value="answerGraph">Show answer graph
+			<input class="studentCheckbox" type="checkbox" name="tool" value="studentGraph" checked="checked">Show student's graph
+			<input class="percentAmount" type="text" name="tool">
+			<input class="plusPercent" type="checkbox" name="tool" value="plusPercent">Plus ten percent
+			<input class="minusPercent" type="checkbox" name="tool" value="minusPercent">Minus ten percent
+			<input class="intervalAmount" type="text" name="tool">
+			<input class="plusInterval" type="checkbox" name="tool" value="plusInterval">Plus interval
+			<input class="minusInterval" type="checkbox" name="tool" value="minusInterval">Minus interval
+		</form>
+		<button class="compareButton" type="button">Check Answer</button>
+		<button class="toJSON" type="button">To JSON</button>
+		<div class="feedback">
+		</div>
+		<input type="text" class="jsonText">
+	</div>
+	 
+	
+</body>
+</html>

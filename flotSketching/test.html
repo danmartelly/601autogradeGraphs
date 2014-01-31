@@ -12,26 +12,49 @@
 	<div class="flotContainer">
 		<div class="flotPlaceholder" style="width:500px;height:300px"></div>
 		<form>
-			<input class="flotPencilRadio" type="radio" checked="checked">Pencil
-			<input class="flotEraserRadio" type="radio">Eraser
-			<input class="flotMovePointRadio" type="radio">Move Points
+			<input class="flotPencilRadio" type="radio" name="tool" checked="checked">Pencil
+			<input class="flotEraserRadio" type="radio" name="tool">Eraser
+			<input class="flotMovePointRadio" type="radio" name="tool">Move Points
 		</form>
+		<form class="showGraphs">
+		<input class="answerCheckbox" type="checkbox" name="tool" value="answerGraph">Show answer graph
+			<input class="studentCheckbox" type="checkbox" name="tool" value="studentGraph" checked="checked">Show student's graph
+			<input class="percentAmount" type="text" name="tool">
+			<input class="plusPercent" type="checkbox" name="tool" value="plusPercent">Plus ten percent
+			<input class="minusPercent" type="checkbox" name="tool" value="minusPercent">Minus ten percent
+			<input class="intervalAmount" type="text" name="tool">
+			<input class="plusInterval" type="checkbox" name="tool" value="plusInterval">Plus interval
+			<input class="minusInterval" type="checkbox" name="tool" value="minusInterval">Minus interval
+		</form>
+		<button class="compareButton" type="button">Check Answer</button>
+		<button class="toJSON" type="button">To JSON</button>
+		<div class="feedback">
+		</div>
+		<input type="text" class="jsonText">
 	</div>
 	 
-	<form id="showGraphs">
-		<input id="answerCheckbox" type="checkbox" name="tool" value="answerGraph">Show answer graph
-		<input id="studentCheckbox" type="checkbox" name="tool" value="studentGraph" checked="checked">Show student's graph
-		<input id="percentAmount" type="text" name="tool">
-		<input id="plusPercent" type="checkbox" name="tool" value="plusPercent">Plus ten percent
-		<input id="minusPercent" type="checkbox" name="tool" value="minusPercent">Minus ten percent
-		<input id="intervalAmount" type="text" name="tool">
-		<input id="plusInterval" type="checkbox" name="tool" value="plusInterval">Plus interval
-		<input id="minusInterval" type="checkbox" name="tool" value="minusInterval">Minus interval
-	</form>
-	<button id="compareButton" type="button">Check Answer</button>
-	<button id="toJSON" type="button">To JSON</button>
-	<div id="feedback">
+	<div class="flotContainer">
+		<div class="flotPlaceholder" style="width:500px;height:300px"></div>
+		<form>
+			<input class="flotPencilRadio" type="radio" name="tool" checked="checked">Pencil
+			<input class="flotEraserRadio" type="radio" name="tool">Eraser
+			<input class="flotMovePointRadio" type="radio" name="tool">Move Points
+		</form>
+		<form class="showGraphs">
+		<input class="answerCheckbox" type="checkbox" name="tool" value="answerGraph">Show answer graph
+			<input class="studentCheckbox" type="checkbox" name="tool" value="studentGraph" checked="checked">Show student's graph
+			<input class="percentAmount" type="text" name="tool">
+			<input class="plusPercent" type="checkbox" name="tool" value="plusPercent">Plus ten percent
+			<input class="minusPercent" type="checkbox" name="tool" value="minusPercent">Minus ten percent
+			<input class="intervalAmount" type="text" name="tool">
+			<input class="plusInterval" type="checkbox" name="tool" value="plusInterval">Plus interval
+			<input class="minusInterval" type="checkbox" name="tool" value="minusInterval">Minus interval
+		</form>
+		<button class="compareButton" type="button">Check Answer</button>
+		<button class="toJSON" type="button">To JSON</button>
+		<div class="feedback">
+		</div>
+		<input type="text" class="jsonText">
 	</div>
-	<input type="text" id="jsonText">
 </body>
 </html>
